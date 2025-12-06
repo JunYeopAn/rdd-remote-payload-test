@@ -26,14 +26,10 @@
 
 간단한 구조는 다음과 같습니다.
 
-+------------------+         +------------------+
-|  Victim Server   |         |  Attacker Server |
-|  (Node.js, npm)  |  --->   |  (Python HTTP)   |
-+------------------+   POST  +------------------+
-          ^
-          |  install script (npm)
-          |
-   [Malicious NPM Package]
+Victim Server(Node.js, npm)  --(POST)->  Attacker Server(Python HTTP)
+
+Victim Server에서 install script (npm)
+[Malicious NPM Package]
    - package.json (scripts.install)
    - install.js (remote payload download & eval)
    - payload (exfiltrate process.env)
